@@ -1,33 +1,75 @@
+import { info, success, error, defaultModules, Stack } from '@pnotify/core/dist/PNotify.js';
+import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
+import '@pnotify/core/dist/BrightTheme.css';
+defaultModules.set(PNotifyMobile, {});
+
+
 import {Chart} from 'chart.js/auto';
+import { Stack } from '@pnotify/core';
 
 // 1 Завдання
 
 const result = document.querySelector(".result");
 const key = document.getElementById("key");
+const newGameBtn = document.querySelector(".new-game");
+
 
 const keys = ["T", "L", "M", "H", "W", "A", "Q", "C", "X", "J"];
-function randomNumber () {
+function randomNumber() {
   return Number.parseInt(Math.random() * (9 - 0) + 0);
 }
-
 let currentKeyIndex = 0;
 
 
-const currentRandomKey = keys[random];
-
+let currentRandomKey = keys[randomNumber()];
 key.textContent = currentRandomKey;
 
 
 window.addEventListener("keydown", onKeyClicked);
+window.addEventListener("keypress", (event) => {
+  event.preventDefault();
+})
+
+newGameBtn.addEventListener("click", () => {
+  currentKeyIndex = 0;
+  result.textContent = currentKeyIndex;
+
+  info({
+    text: "Ви почали нову гру",
+    stack: new Stack({
+      dir1: "down",
+      dir2: "left",
+      context: document.querySelector(".notices"),
+    }),
+  });
+})
+
 
 function onKeyClicked (event) {
-  // console.log(event.code);
   if (event.code === "Key" + currentRandomKey) {
-    console.log("ihk");
     currentKeyIndex += 1;
-
     result.textContent = currentKeyIndex;
-    randomNumber();
+
+    success({
+      text: "Правильно натиснули",
+      stack: new Stack({
+        dir1: "down",
+        dir2: "left",
+        context: document.querySelector(".notices"),
+      }),
+    });
+
+    currentRandomKey = keys[randomNumber()];
+    key.textContent = currentRandomKey;
+  } else {
+    error({
+      text: "Неправильно натиснули",
+      stack: new Stack({
+        dir1: "down",
+        dir2: "left",
+        context: document.querySelector(".notices"),
+      }),
+    })
   }
 }
 
