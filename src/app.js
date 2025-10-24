@@ -15,7 +15,7 @@ const key = document.getElementById("key");
 const newGameBtn = document.querySelector(".new-game");
 
 
-const keys = ["T", "L", "M", "H", "W", "P", "Q", "C", "X", "J"];
+const keys = ["T", "L", "M", "H", "E", "P", "Q", "C", "X", "J"];
 function randomNumber() {
   return Number.parseInt(Math.random() * (9 - 0) + 0);
 }
