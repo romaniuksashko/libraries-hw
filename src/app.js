@@ -2,10 +2,10 @@ import { info, success, error, defaultModules, Stack } from '@pnotify/core/dist/
 import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 import '@pnotify/core/dist/BrightTheme.css';
 defaultModules.set(PNotifyMobile, {});
-
-
-import {Chart} from 'chart.js/auto';
 import { Stack } from '@pnotify/core';
+
+
+import { Chart } from 'chart.js/auto';
 
 // 1 Завдання
 
@@ -97,3 +97,4 @@ const config = {
 };
 
 const salesChart = new Chart(document.getElementById("sales-chart"), config);
+console.log(salesChart);
