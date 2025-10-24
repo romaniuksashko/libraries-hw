@@ -9,12 +9,13 @@ import { Stack } from '@pnotify/core';
 
 // 1 Завдання
 
+
 const result = document.querySelector(".result");
 const key = document.getElementById("key");
 const newGameBtn = document.querySelector(".new-game");
 
 
-const keys = ["T", "L", "M", "H", "W", "A", "Q", "C", "X", "J"];
+const keys = ["T", "L", "M", "H", "W", "P", "Q", "C", "X", "J"];
 function randomNumber() {
   return Number.parseInt(Math.random() * (9 - 0) + 0);
 }
@@ -74,6 +75,7 @@ function onKeyClicked (event) {
 }
 
 // 2 Завдання
+
 
 const chartData = {
   labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"],
