@@ -1,4 +1,4 @@
-import { info, success, error, defaultModules, Stack } from '@pnotify/core/dist/PNotify.js';
+import { info, success, error, defaultModules } from '@pnotify/core/dist/PNotify.js';
 import * as PNotifyMobile from '@pnotify/mobile/dist/PNotifyMobile.js';
 import '@pnotify/core/dist/BrightTheme.css';
 defaultModules.set(PNotifyMobile, {});
