@@ -5,7 +5,7 @@ defaultModules.set(PNotifyMobile, {});
 import { Stack } from '@pnotify/core';
 
 
-import { Chart } from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 
 // 1 Завдання
 
